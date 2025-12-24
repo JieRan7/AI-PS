@@ -1,0 +1,171 @@
+{
+  "process_categories": {
+    "system_critical": [
+      "systemd",
+      "init",
+      "kthreadd",
+      "udevd",
+      "dbus",
+      "svchost",
+      "lsass",
+      "csrss",
+      "smss",
+      "wininit"
+    ],
+    "network_services": [
+      "sshd",
+      "nginx",
+      "apache",
+      "postgres",
+      "mysql",
+      "redis",
+      "mongod",
+      "docker",
+      "kube",
+      "etcd",
+      "haproxy"
+    ],
+    "user_applications": [
+      "chrome",
+      "firefox",
+      "code",
+      "pycharm",
+      "sublime",
+      "thunderbird",
+      "slack",
+      "discord",
+      "zoom",
+      "teams",
+      "notepad",
+      "word",
+      "excel"
+    ],
+    "background_workers": [
+      "cron",
+      "atd",
+      "worker",
+      "celery",
+      "supervisord",
+      "rq",
+      "sidekiq",
+      "beanstalkd"
+    ],
+    "development_tools": [
+      "python",
+      "java",
+      "node",
+      "golang",
+      "docker",
+      "kubectl",
+      "git",
+      "vscode",
+      "intellij",
+      "eclipse"
+    ],
+    "security_services": [
+      "fail2ban",
+      "firewalld",
+      "auditd",
+      "clamav",
+      "selinux",
+      "apparmor",
+      "crowdstrike",
+      "sentinel"
+    ],
+    "monitoring_services": [
+      "prometheus",
+      "grafana",
+      "zabbix",
+      "nagios",
+      "datadog",
+      "newrelic"
+    ],
+    "virtualization": [
+      "qemu",
+      "virt",
+      "vmware",
+      "virtualbox",
+      "hyperv"
+    ]
+  },
+  "performance_thresholds": {
+    "cpu_intensive": 70,
+    "memory_intensive": 30,
+    "high_io": 100,
+    "low_resource_cpu": 5,
+    "low_resource_memory": 5,
+    "stable_cpu_min": 5,
+    "stable_cpu_max": 30,
+    "stable_memory_min": 5,
+    "stable_memory_max": 20
+  },
+  "custom_rules": [
+    {
+      "category": "database_heavy",
+      "keywords": ["mysql", "postgres", "mongod", "redis"],
+      "cpu_threshold": 40,
+      "memory_threshold": 50,
+      "weight": 2
+    },
+    {
+      "category": "web_server",
+      "keywords": ["nginx", "apache", "httpd", "tomcat"],
+      "cpu_threshold": 30,
+      "weight": 1
+    },
+    {
+      "category": "idle_developer_tool",
+      "keywords": ["vscode", "pycharm", "sublime"],
+      "cpu_threshold": 5,
+      "memory_threshold": 10,
+      "weight": 1
+    }
+  ],
+  "tag_definitions": {
+    "high_priority": {
+      "color": "red",
+      "description": "高优先级进程，系统关键"
+    },
+    "monitor_closely": {
+      "color": "orange",
+      "description": "需要密切监控"
+    },
+    "auto_restart": {
+      "color": "blue",
+      "description": "配置为自动重启"
+    },
+    "ignore_alert": {
+      "color": "gray",
+      "description": "忽略告警"
+    },
+    "business_critical": {
+      "color": "purple",
+      "description": "业务关键进程"
+    },
+    "experimental": {
+      "color": "yellow",
+      "description": "实验性进程"
+    },
+    "scheduled_task": {
+      "color": "green",
+      "description": "计划任务进程"
+    },
+    "third_party": {
+      "color": "cyan",
+      "description": "第三方应用程序"
+    }
+  },
+  "system_settings": {
+    "default_monitor_interval": 2.0,
+    "max_process_display": 100,
+    "enable_auto_save": true,
+    "save_interval_minutes": 5,
+    "log_level": "INFO"
+  },
+  "metadata": {
+    "version": "1.0.0",
+    "created_at": "2024-01-01T00:00:00",
+    "updated_at": "2024-01-01T00:00:00",
+    "author": "Process Classification System"
+  }
+}
